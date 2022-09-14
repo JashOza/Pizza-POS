@@ -34,7 +34,7 @@ public class Pizza {
      */
     public void setSize(String size) {
         size = size.toLowerCase().trim();
-        List<String> validSize = Arrays.asList("small","medium","large");
+        List<String> validSize = Arrays.asList("small","medium","large","xl");
         if(validSize.contains(size))
             this.size = size;
         else
@@ -45,7 +45,7 @@ public class Pizza {
         return dough;
     }
 
-    public void setDough(String dough) {
+    public void setDough(String dough){
         this.dough = dough;
     }
 
