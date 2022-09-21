@@ -1,24 +1,21 @@
 package com.example.pizza;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 public class Pizza {
    
-    private String size , dough , crustStyle, sauce;
+    private String size , dough , crustStyle;
     private ArrayList<String> toppings = new ArrayList<String>();
     private  boolean delivery;
     private double price;
-
+    List<String> validSize = Arrays.asList("small","medium","large","xl");
+    List<String> sauce = Arrays.asList("Marinara","Pesto","Garlic");
     public Pizza(){
     };
-    public Pizza(String size, String dough, String crustStyle, String sauce, ArrayList<String> toppings, boolean delivery, double price) {
+    public Pizza(String size, String dough, String crustStyle, ArrayList<String> toppings, boolean delivery, double price) {
         this.size = size;
         this.dough = dough;
         this.crustStyle = crustStyle;
-        this.sauce = sauce;
         this.toppings = toppings;
         this.delivery = delivery;
         this.price = price;
@@ -34,11 +31,18 @@ public class Pizza {
      */
     public void setSize(String size) {
         size = size.toLowerCase().trim();
-        List<String> validSize = Arrays.asList("small","medium","large","xl");
+
         if(validSize.contains(size))
             this.size = size;
         else
             throw new IllegalArgumentException("Valid size are :" + validSize);
+    }
+
+    public static  TreeSet<String> getMeatToppingsOptions(){
+        List<String> toppings = Arrays.asList("Bacon","Sausage","Beef Crumble","Ham","Salami");
+        TreeSet<String> toppingsSet = new TreeSet<>();
+        toppingsSet.addAll(toppings);
+        return toppingsSet;
     }
 // Changes showing in GitHub-Jash Oza
     public String getDough() {
@@ -57,13 +61,6 @@ public class Pizza {
         this.crustStyle = crustStyle;
     }
 
-    public String getSauce() {
-        return sauce;
-    }
-
-    public void setSauce(String sauce) {
-        this.sauce = sauce;
-    }
 
     public ArrayList<String> getToppings() {
         return toppings;
@@ -88,4 +85,5 @@ public class Pizza {
     public void setPrice(double price) {
         this.price = price;
     }
+
 }
