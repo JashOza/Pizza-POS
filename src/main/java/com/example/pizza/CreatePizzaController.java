@@ -89,6 +89,7 @@ public class CreatePizzaController implements Initializable {
     @FXML
     private Button submitButton;
 
+    private  ToggleGroup doughToggleGroup, crustStyleToggleGroup;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         pizzaSizeComboBox.getItems().addAll(pizza.validSize);
@@ -97,7 +98,19 @@ public class CreatePizzaController implements Initializable {
         for(String meat : meats){
             meatVbox.getChildren().add(new CheckBox(meat));
         }
+
+        doughToggleGroup = new ToggleGroup();
+        regDoughRadioButton.setToggleGroup(doughToggleGroup);
+        wholeWheatRadioButton.setToggleGroup(doughToggleGroup);
+
+        crustStyleToggleGroup = new ToggleGroup();
+        regularCrustRadioButton.setToggleGroup(crustStyleToggleGroup);
+        thinCrustRadioButton.setToggleGroup(crustStyleToggleGroup);
+        deepDishRadioButton.setToggleGroup(crustStyleToggleGroup);
     }
+
+        // allow 1 at a time
+
 
     @FXML
     private void cretePizza(){
