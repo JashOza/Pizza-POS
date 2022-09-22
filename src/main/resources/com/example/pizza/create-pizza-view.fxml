@@ -7,6 +7,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -74,6 +75,7 @@
                   </VBox>
                   <ComboBox fx:id="sauceComboBox" promptText="Select Sauce" />
                   <CheckBox fx:id="deliveryCheckBox" mnemonicParsing="false" text="Delivery" />
+                  <TextField fx:id="randomTextField" prefHeight="57.0" prefWidth="121.0" />
                </children>
             </VBox>
          </right>
@@ -99,7 +101,7 @@
                         <Label fx:id="totalLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                           <buttons>
-                            <Button fx:id="submitButton" mnemonicParsing="false" prefHeight="14.0" prefWidth="154.0" text="Submit" />
+                            <Button fx:id="submitButton" mnemonicParsing="false" onMouseClicked="#cretePizza" prefHeight="57.0" prefWidth="185.0" text="Submit" />
                           </buttons>
                         </ButtonBar>
                      </children>

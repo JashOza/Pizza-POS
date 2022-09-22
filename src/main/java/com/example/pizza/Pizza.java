@@ -12,13 +12,12 @@ public class Pizza {
     List<String> sauce = Arrays.asList("Marinara","Pesto","Garlic");
     public Pizza(){
     };
-    public Pizza(String size, String dough, String crustStyle, ArrayList<String> toppings, boolean delivery, double price) {
+    public Pizza(String size, ArrayList<String> toppings ,String dough, String crustStyle,String sauce, boolean delivery) {
         this.size = size;
         this.dough = dough;
         this.crustStyle = crustStyle;
         this.toppings = toppings;
         this.delivery = delivery;
-        this.price = price;
     }
 
     public String getSize() {
@@ -38,6 +37,14 @@ public class Pizza {
             throw new IllegalArgumentException("Valid size are :" + validSize);
     }
 
+    public TreeMap<String,Double> getPricesBySiza(){
+        TreeMap<String,Double> sizeAndPrices = new TreeMap<>();
+        sizeAndPrices.put("small",8.99);
+        sizeAndPrices.put("medium",11.99);
+        sizeAndPrices.put("large",16.99);
+        sizeAndPrices.put("xl",22.99);
+        return sizeAndPrices;
+    }
     public static  TreeSet<String> getMeatToppingsOptions(){
         List<String> toppings = Arrays.asList("Bacon","Sausage","Beef Crumble","Ham","Salami");
         TreeSet<String> toppingsSet = new TreeSet<>();
@@ -79,6 +86,17 @@ public class Pizza {
     }
 
     public double getPrice() {
+        double price = 0;
+        //add cost to pizza size
+        price += getPricesBySiza().get(size)            ;
+        //add the toppings(3 free and $1.15 for each topping)
+        if(toppings.size() > 3){
+            price += (toppings.size()-3)*1.15;
+        }
+        /// delivery
+        if(delivery){
+            price += 5;
+        }
         return price;
     }
 

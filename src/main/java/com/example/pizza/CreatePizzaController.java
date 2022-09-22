@@ -16,6 +16,9 @@ public class CreatePizzaController implements Initializable {
 
     Pizza pizza = new Pizza();
     @FXML
+    private TextField randomTextField;
+
+    @FXML
     private CheckBox baconCheckBox;
 
     @FXML
@@ -99,6 +102,7 @@ public class CreatePizzaController implements Initializable {
             meatVbox.getChildren().add(new CheckBox(meat));
         }
 
+        // allow 1 at a time
         doughToggleGroup = new ToggleGroup();
         regDoughRadioButton.setToggleGroup(doughToggleGroup);
         wholeWheatRadioButton.setToggleGroup(doughToggleGroup);
@@ -107,9 +111,19 @@ public class CreatePizzaController implements Initializable {
         regularCrustRadioButton.setToggleGroup(crustStyleToggleGroup);
         thinCrustRadioButton.setToggleGroup(crustStyleToggleGroup);
         deepDishRadioButton.setToggleGroup(crustStyleToggleGroup);
+
+        randomTextField.textProperty().addListener((observableValue, oldValue, newValue) -> {
+            try{
+                Integer.parseInt(newValue);
+            }
+            catch(Exception e)
+            {
+                randomTextField.setText(oldValue);
+            }
+        });
     }
 
-        // allow 1 at a time
+
 
 
     @FXML
@@ -122,5 +136,18 @@ public class CreatePizzaController implements Initializable {
                 topping.add(checkBox.getText());
             }
         }
+        //see which radio button was selected
+        RadioButton doughRBSelected =   (RadioButton) doughToggleGroup.getSelectedToggle();
+        RadioButton crustRBSelected = (RadioButton) crustStyleToggleGroup.getSelectedToggle();
+
+        Pizza newPizza = new Pizza(pizzaSizeComboBox.getValue(),topping,doughRBSelected.getText(),crustRBSelected.getText(),sauceComboBox.getValue(), deliveryCheckBox.isSelected());
+        costPizzaLabel.setText(String.format("$ %.2f",newPizza.getPrice()));
+        double tax = newPizza.getPrice()*0.13;
+        taxLabel.setText(String.format("%.2f",tax));
+        double total = tax + newPizza.getPrice();
+        totalLabel.setText(String.format("%.2f",total));
+
+
+
     }
 }
