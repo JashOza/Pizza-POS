@@ -23,3 +23,5 @@ create table pizzaToppings(
     foreign key(pizzaID) references pizza(pizzaID),
     foreign key(toppingID) references topping(toppingID)
 );
+
+insert into topping(toppingName) values ('cheese','olives', 'pepproni','anchovies','pineapple');
