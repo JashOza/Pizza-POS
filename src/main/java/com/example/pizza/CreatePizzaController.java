@@ -97,9 +97,11 @@ public class CreatePizzaController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         pizzaSizeComboBox.getItems().addAll(pizza.validSize);
         sauceComboBox.getItems().addAll(pizza.sauce);
-        TreeSet<String> meats  = pizza.getMeatToppingsOptions();
-        for(String meat : meats){
-            meatVbox.getChildren().add(new CheckBox(meat));
+        ArrayList<Topping> toppings = DBUtility.getToppingsFromDB();
+        for(Topping topping : toppings){
+            if(topping.getCategory().equals("meat")){
+                meatVbox.getChildren().add(new CheckBox(topping.getName()));
+            }
         }
 
         // allow 1 at a time

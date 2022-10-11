@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8badf08f-2695-4f89-b7bf-2102abba78f3" name="Changes" comment="added sql file.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pizza/Topping.java" afterDir="false" />
+    <list default="true" id="8badf08f-2695-4f89-b7bf-2102abba78f3" name="Changes" comment="added topping class to store individual toppings for our pizza">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pizza/DBUtility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DATABASE.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DATABASE.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pizza/CreatePizzaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pizza/CreatePizzaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pizza/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pizza/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665519422533</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added topping class to store individual toppings for our pizza">
+      <created>1665521168568</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1665521168568</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,6 +217,7 @@
     <MESSAGE value="Final changes has been made ." />
     <MESSAGE value="11th October, 2022" />
     <MESSAGE value="added sql file." />
-    <option name="LAST_COMMIT_MESSAGE" value="added sql file." />
+    <MESSAGE value="added topping class to store individual toppings for our pizza" />
+    <option name="LAST_COMMIT_MESSAGE" value="added topping class to store individual toppings for our pizza" />
   </component>
 </project>
